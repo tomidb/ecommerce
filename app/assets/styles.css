@@ -1,0 +1,536 @@
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+main {
+  background-color: rgba(78, 31, 92, 0.1);
+  margin: 0px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited,
+a:link {
+  color: black;
+}
+
+.success-color {
+  color: rgba(47, 167, 0, 0.973);
+}
+
+.neutral-color {
+  color: rgba(15, 15, 15, 0.507);
+}
+
+/* HEADER & HEADER COMPONENTS */
+header {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  background-color: rgb(140, 37, 172);
+  padding: 0;
+  height: 5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  height: 2rem;
+  padding: 0 0.2rem 0 1rem;
+  background-color: white;
+  border-radius: 100px;
+}
+
+.search-container input {
+  width: 88%;
+  height: 2rem;
+  padding: 0 0.5rem;
+  outline: none;
+  border: none;
+  border-right: 1px solid rgba(51, 51, 51, 0.1);
+}
+
+.search-button {
+  width: 12%;
+  height: auto;
+}
+
+.search-button img {
+  width: 28px;
+  height: auto;
+}
+
+.logo {
+  height: 5rem;
+}
+
+.logo a {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 40px;
+  color: rgb(251, 255, 29);
+  text-decoration: none;
+  line-height: 5rem;
+  padding-left: 1rem;
+}
+
+/* USER MENU */
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.user-start-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 0.2rem;
+  padding: 0.5rem;
+}
+
+.user-start-menu a {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.user-star-menu a i {
+  transition: all 300ms ease-in;
+}
+
+.user-start-menu a:hover i {
+  transform: scale(1.2);
+}
+
+.user-start-menu a span {
+  border-right: 2px solid #fff;
+  padding-right: 0.2rem;
+}
+
+.signup-image {
+  padding-left: 0.1rem;
+}
+
+.profile-image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.profile-image-container a {
+  display: inline-block;
+  text-decoration: none;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 15px;
+  color: rgba(209, 187, 216, 0.9);
+  font-weight: 600;
+}
+
+/* USER PROFILE MENU*/
+
+.user-profile-menu {
+  display: flex;
+  height: 5rem;
+  align-items: baseline;
+  position: relative;
+  gap: 0.7rem;
+}
+
+#cart-link {
+  cursor: pointer;
+}
+
+#cart-icon {
+  color: rgb(255, 232, 27);
+}
+
+#profile-image {
+  font-size: 36px;
+  color: #fff;
+  width: 50px;
+  height: auto;
+  line-height: 5rem;
+  align-self: center;
+}
+
+.profile-menu {
+  display: none;
+  position: absolute;
+  top: 5rem;
+  right: 0px;
+  width: 160px;
+  margin: 0px;
+  padding: 0px;
+  background-color: #f2f1f0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.profile-menu-container {
+  height: 100%;
+}
+
+.profile-menu-container:hover .profile-menu {
+  display: block;
+}
+
+.profile-menu > li {
+  margin: 0;
+  background-color: #f2f1f0;
+  padding: 8px;
+  line-height: 25px;
+  font-size: 13px;
+  text-decoration: none;
+  transition: all 100ms ease-in;
+}
+
+.profile-menu > li:hover {
+  font-size: 20px;
+}
+
+.display-toggle {
+  display: none;
+}
+
+/* PRODUCTS CARDS */
+.grid-fluid {
+  margin: 0 auto;
+  padding-top: 5rem;
+  max-width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  padding: 1rem 0 0 0;
+  width: 80%;
+  background-color: rgba(78, 31, 92, 0.2);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+.product-card img {
+  justify-content: center;
+  height: 220px;
+  width: 220px;
+}
+
+.product-card p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-container {
+  margin: 0 auto;
+  padding: 0 1rem 0.5rem 1rem;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 1px solid rgba(51, 51, 51, 0.1);
+  padding: 16px 0 0 0;
+}
+
+.product-name {
+  line-height: 1.3;
+  margin: 0;
+  padding: 0 16px;
+  max-height: 2.4em;
+  height: 2.4em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-wrap: anywhere;
+}
+
+.product-price {
+  font-size: 20px;
+  padding: 0 16px;
+}
+
+.product-card a {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.button-panel {
+  display: flex;
+  border-top: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+.button-panel button {
+  display: flex;
+  background: inherit;
+  justify-content: center;
+  border: none;
+  width: 50%;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  padding: 0px;
+}
+
+.button-panel button:hover {
+  background-color: rgba(236, 205, 247, 0.8);
+}
+
+button i {
+  width: 100%;
+  padding: 12px 0;
+  margin: 0;
+}
+
+i[id*="icon"] {
+  border-right: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+/* REGISTRARSE */
+
+.signup-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 40px;
+  background: rgba(78, 31, 92, 0.2);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.signup-container .input-box {
+  position: relative;
+}
+
+.signup-container .input-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: rgb(140, 37, 172);
+  margin-bottom: 40px;
+  border: none;
+  border-bottom: 1px solid rgb(140, 37, 172);
+  outline: none;
+  background: transparent;
+}
+
+.signup-container .input-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: rgb(140, 37, 172);
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.signup-container .input-box input:focus ~ label,
+.signup-container .input-box input:valid ~ label {
+  top: -18px;
+  left: 0;
+  color: rgb(164, 111, 180);
+  font-size: 12px;
+}
+
+.submit-box {
+  text-align: center;
+}
+.signup-container input[type="submit"] {
+  width: 50%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: rgb(140, 37, 172);
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+/* INICIAR SESION */
+
+.login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 40px;
+  background: rgba(78, 31, 92, 0.2);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.login-container .input-box {
+  position: relative;
+}
+.login-container .input-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: rgb(140, 37, 172);
+  margin-bottom: 40px;
+  border: none;
+  border-bottom: 1px solid rgb(140, 37, 172);
+  outline: none;
+  background: transparent;
+}
+
+.login-container .input-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: rgb(140, 37, 172);
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.login-container .input-box input:focus ~ label,
+.login-container .input-box input:valid ~ label {
+  top: -18px;
+  left: 0;
+  color: rgb(164, 111, 180);
+  font-size: 12px;
+}
+
+.submit-box {
+  text-align: center;
+}
+
+.login-container input[type="submit"] {
+  width: 50%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: rgb(140, 37, 172);
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+/* CARRITO */
+
+.cart-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60%, 100%));
+  justify-content: center;
+  padding-top: 7rem;
+}
+
+.cart-product {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  height: 20vh;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.img-container {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.title-container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 40%;
+}
+
+.quantity-buttons-container {
+  display: flex;
+  justify-content: center;
+  width: 15%;
+}
+
+.quantity {
+  padding: 0.2rem;
+}
+
+.price-container {
+  display: flex;
+  justify-content: center;
+  width: 15%;
+}
+
+.del-button-container {
+  display: flex;
+  justify-content: center;
+  width: 10%;
+}
+
+.fa-trash {
+  cursor: pointer;
+}
+/* Footer carrito*/
+
+.cart-footer-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 20vh;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: end;
+}
+
+.total-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.buy-button {
+  background-color: green;
+  border-radius: 3px;
+  padding: 5px;
+}

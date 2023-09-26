@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy it</title>
+  <script src="https://kit.fontawesome.com/2915bc85e1.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="app/assets/styles.css">
+  <style id="dynamic-styles"></style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <template id="cart-template">
+    <article class="cart-product">
+      <div class="img-container">
+        <img src="" alt="">
+      </div>
+      <div class="title-container">
+        <p class="product-title"></p>
+      </div>
+      <div class="quantity-buttons-container">
+        <button class="decrement-button">-</button>
+        <span class="quantity"></span>
+        <button class="increment-button">+</button>
+      </div>
+      <div class="price-container">
+        <span class="price"></span>
+      </div>
+      <div class="del-button-container">
+        <i class="fas fa-trash"></i>
+      </div>
+    </article>
+  </template>
+  <template id="footer-template">
+
+    <div class="total-container">
+      <p class="total">Total</p>
+      <span class="total-price">A</span>
+    </div>
+    <div class="buy-container">
+      <button class="buy-button">Comprar ahora</button>
+    </div>
+
+  </template>
+  <script src="app/index.js" type="module">
+  </script>
+</body>
+
+</html>
