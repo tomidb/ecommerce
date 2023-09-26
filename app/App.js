@@ -2,6 +2,7 @@ import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.14.0/fi
 import { auth } from "./helpers/firebase.js";
 import { Auth } from "./helpers/authCheck.js";
 import { Logout } from "./components/Logout.js";
+// AGREGANDO COMENTARIO RANDOM
 
 export async function App() {
   console.log("ENTRA A APP");
