@@ -9,7 +9,7 @@ export function Header() {
 
   $header.classList.add("header");
   $header.appendChild(Logo());
-  $header.appendChild(SearchForm());
+  //$header.appendChild(SearchForm());
   $header.appendChild(Profile());
 
   return $header;
