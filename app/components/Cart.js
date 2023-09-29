@@ -28,7 +28,7 @@ export function Cart() {
       $template.querySelector("img").setAttribute("src", el.image);
       $template.querySelector(".product-title").textContent = el.title;
       $template.querySelector(".quantity").textContent = el.quantity;
-      $template.querySelector(".price").textContent = `$ ${finalProdPrice}`;
+      $template.querySelector(".price").textContent = `$${finalProdPrice}`;
       $template.querySelector(".decrement-button").dataset.id = el.id;
       $template.querySelector(".increment-button").dataset.id = el.id;
       $template.querySelector(".del-button").dataset.id = el.id;
