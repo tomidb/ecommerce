@@ -59,14 +59,14 @@ export function ProductsCards(props) {
   return `
   <article class="product-card">
   <div class="image-container">
-    <img src="${image}" alt="${title}">
+    <img src="${image}" alt="${title}" class="product-card-img">
   </div>
   <div class="data-container">
     <p class="product-name">
       <a href="#">${title}</a>
     </p>
     <p class="product-data">
-      <span class="product-price">$ ${price}</span>
+      <span class="product-price">$ ${price.toFixed(2)}</span>
     </p> 
     <div class="button-panel" id="button-panel">
       <button id="fav-${id}" class="fav-${id}"><i  id="icon-${id}" class="${favIconClass} fa-heart" style="color:red;"></i></button>

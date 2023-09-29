@@ -4,7 +4,7 @@ export function Main() {
     $main = d.createElement("main");
 
   $main.id = "main";
-  //$main.classList.add("grid-fluid");
+  $main.classList.add("grid-fluid");
 
   return $main;
 }

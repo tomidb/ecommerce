@@ -10,7 +10,7 @@ export function Cart() {
   console.log("ENTRA A CART");
   const d = document;
   const $main = d.querySelector("main");
-  $main.classList;
+
   const $cartContainer = document.createElement("div");
   const $template = d.getElementById("cart-template").content;
   const $footerTemplate = d.querySelector("#footer-template");
@@ -23,15 +23,15 @@ export function Cart() {
     let cart = await Auth.userDb.getCartWithDetails();
     console.log(cart);
     cart.forEach((el) => {
+      let prodPrice = el.quantity * el.price,
+        finalProdPrice = prodPrice.toFixed(2);
       $template.querySelector("img").setAttribute("src", el.image);
       $template.querySelector(".product-title").textContent = el.title;
       $template.querySelector(".quantity").textContent = el.quantity;
-      $template.querySelector(".price").textContent = `$ ${
-        el.quantity * el.price
-      }`;
+      $template.querySelector(".price").textContent = `$ ${finalProdPrice}`;
       $template.querySelector(".decrement-button").dataset.id = el.id;
       $template.querySelector(".increment-button").dataset.id = el.id;
-      $template.querySelector(".fa-trash").dataset.id = el.id;
+      $template.querySelector(".del-button").dataset.id = el.id;
 
       let $clone = d.importNode($template, true);
       $fragment.appendChild($clone);
@@ -50,10 +50,9 @@ export function Cart() {
                 `;
         console.log("El carrito de compras está vacío.");
       } else {
-        const nPrice = Object.values(cart).reduce(
-          (acc, { quantity, price }) => acc + quantity * price,
-          0
-        );
+        const nPrice = Object.values(cart)
+          .reduce((acc, { quantity, price }) => acc + quantity * price, 0)
+          .toFixed(2);
 
         // CUIDADO, HOMBRES TRABAJANDO EN ESTE PRECISO LUGAR
 
@@ -73,8 +72,8 @@ export function Cart() {
         console.log(wspText);
         $cartFooter.innerHTML = `
       <div class="total-container">
-        <p class="total">Total</p>
-        <span class="total-price">${nPrice}</span>
+        <p class="total">Total:</p>
+        <span class="total-price">$ ${nPrice}</span>
       </div>
       <div class="buy-container">
         <a href="https://wa.me/5493517594045?text=${encodeURIComponent(
@@ -92,7 +91,7 @@ export function Cart() {
   };
 
   $cartContainer.addEventListener("click", (e) => {
-    if (e.target.matches(".fa-trash")) {
+    if (e.target.matches(".del-button")) {
       deleteProductFromCart(e.target.dataset.id);
     } else {
       setQuantity(e);
