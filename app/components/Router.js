@@ -10,12 +10,16 @@ import { Auth } from "../helpers/authCheck.js";
 export async function Router() {
   console.log("ENTRA A ROUTER");
   const d = document,
-    w = window;
+    w = window,
+    $main = d.getElementById("main"),
+    $slider = d.querySelector(".big-container");
+
   let { hash } = location;
 
   if (!hash || hash === "#/") {
     // Remover la clase .grid-fluid
-    d.getElementById("main").classList.add("grid-fluid");
+    $main.classList.add("grid-fluid");
+    $slider.classList.toggle("display-toogle");
 
     /* d.getElementById("main").insertAdjacentElement(
       "afterbegin",
@@ -37,7 +41,7 @@ export async function Router() {
               favIconClass,
               cartIconClass,
             });
-            d.getElementById("main").innerHTML = html;
+            $main.innerHTML = html;
           });
         } else if (Auth.userDb) {
           let html = "";
@@ -62,35 +66,40 @@ export async function Router() {
               cartIconClass,
             });
 
-            d.getElementById("main").innerHTML = html;
+            $main.innerHTML = html;
           });
         }
       },
     });
   } else if (hash === "#/signup") {
     // Añadir la clase .grid-fluid
-    d.getElementById("main").classList.add("grid-fluid");
+    $main.classList.add("grid-fluid");
+    $slider.classList.add("display-toggle");
 
-    d.getElementById("main").appendChild(SignUp());
+    $main.appendChild(SignUp());
   } else if (hash === "#/login") {
     // Añadir la clase .grid-fluid
-    d.getElementById("main").classList.add("grid-fluid");
+    $main.classList.add("grid-fluid");
+    $slider.classList.add("display-toggle");
 
-    d.getElementById("main").appendChild(Login());
+    $main.appendChild(Login());
   } else if (hash === "#/favoritos") {
     // Añadir la clase .grid-fluid
-    d.getElementById("main").classList.add("grid-fluid");
+    $main.classList.add("grid-fluid");
+    $slider.classList.add("display-toggle");
 
-    d.getElementById("main").appendChild(Favs());
+    $main.appendChild(Favs());
   } else if (hash === "#/mis-compras") {
     // Añadir la clase .grid-fluid
-    d.getElementById("main").classList.add("grid-fluid");
+    $main.classList.add("grid-fluid");
+    $slider.classList.add("display-toggle");
 
-    d.getElementById("main").appendChild(MisCompras());
+    $main.appendChild(MisCompras());
   } else if (hash === "#/cart") {
     // Remover la clase .grid-fluid
-    d.getElementById("main").classList.remove("grid-fluid");
+    $main.classList.remove("grid-fluid");
+    $slider.classList.add("display-toggle");
 
-    d.getElementById("main").appendChild(Cart());
+    $main.appendChild(Cart());
   }
 }
