@@ -683,11 +683,11 @@ i[id*="icon"] {
 .cart-footer-container {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 100%;
   height: 20vh;
   margin: 0 auto;
   justify-content: center;
-  align-items: end;
+  align-items: center;
 }
 
 .total-container {
@@ -699,9 +699,24 @@ i[id*="icon"] {
 }
 
 .buy-button {
-  background-color: green;
-  border-radius: 3px;
-  padding: 5px;
+  display: inline-block;
+  text-align: center;
+  line-height: 48px;
+  width: 250px;
+  height: 48px;
+  background-color: #3483fa;
+  color: white;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.buy-button:visited {
+  color: white;
+}
+
+.buy-button:link {
+  color: white;
 }
 
 /* MEDIA QUERIES */
