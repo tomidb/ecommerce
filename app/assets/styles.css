@@ -53,7 +53,12 @@ a:link {
   padding: 5rem 0 0 0;
   white-space: nowrap;
   position: relative;
-  background-color: rgba(78, 31, 92, 0.1);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(78, 31, 92, 0.1) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
 }
 
 .big-container:before,
@@ -287,7 +292,7 @@ header {
 /* PRODUCTS CARDS */
 .grid-fluid {
   margin: 0 auto;
-  padding-top: 5rem;
+  padding-top: 2rem;
   max-width: 100%;
   display: grid;
   justify-content: center;
