@@ -11,12 +11,19 @@ export async function App() {
 
   // GET PRODUCTS
 
-  /*async function getProducts() {
+  /* async function getProductsAPI1() {
     await fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((json) => console.log(json));
   }
-*/
+
+  async function getProductsAPI2() {
+    await fetch("https://dummyjson.com/products")
+      .then((res) => res.json())
+      .then((json) => console.log(json));
+  }
+  */
+
   // AUTH CHECK
 
   await onAuthStateChanged(auth, async (user) => {
@@ -26,6 +33,5 @@ export async function App() {
 
   // EJECUTA FUNCIONES
 
-  // getProducts();
   Logout();
 }

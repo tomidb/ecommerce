@@ -17,7 +17,13 @@ body {
 }
 
 main {
-  background-color: rgba(78, 31, 92, 0.1);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(78, 31, 92, 0.1) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
   margin: 0px;
   width: 100%;
   min-height: 100vh;
@@ -38,6 +44,66 @@ a:link {
 
 .neutral-color {
   color: rgba(15, 15, 15, 0.507);
+}
+
+/* SLIDER */
+
+.big-container {
+  overflow: hidden;
+  padding: 5rem 0 0 0;
+  white-space: nowrap;
+  position: relative;
+  background-color: rgba(78, 31, 92, 0.1);
+}
+
+.big-container:before,
+.big-container:after {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.big-container:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.big-container:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.big-container:hover .slider-container {
+  animation-play-state: paused;
+}
+
+.slider-container {
+  display: inline-block;
+  animation: 25s slide infinite linear;
+}
+
+.category-slide {
+  display: inline-block;
+  color: blue;
+  border: 1px solid rgb(140, 37, 172);
+  border-radius: 15px;
+  padding: 0 10px 0 10px;
+  height: 50px;
+  line-height: 50px;
+  margin: 10px 40px;
+  cursor: pointer;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 /* HEADER & HEADER COMPONENTS */

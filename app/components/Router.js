@@ -1,6 +1,5 @@
 import { fetch_request } from "../helpers/fetch_request.js";
 import { ProductsCards } from "./ProductsCards.js";
-import { MainView } from "./MainView.js";
 import { SignUp } from "./SignUp.js";
 import { Login } from "./Login.js";
 import { Favs } from "./Favs.js";
@@ -17,6 +16,11 @@ export async function Router() {
   if (!hash || hash === "#/") {
     // Remover la clase .grid-fluid
     d.getElementById("main").classList.add("grid-fluid");
+
+    /* d.getElementById("main").insertAdjacentElement(
+      "afterbegin",
+      CategoriesSlider()
+    );*/
 
     await fetch_request({
       url: "https://fakestoreapi.com/products",

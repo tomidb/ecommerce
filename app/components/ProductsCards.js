@@ -6,6 +6,7 @@ export function ProductsCards(props) {
     id,
     title,
     image,
+    thumbnail,
     price,
     description,
     category,
