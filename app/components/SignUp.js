@@ -42,6 +42,8 @@ export function SignUp() {
         password
       );
       form.reset();
+      location.assign("http://127.0.0.1:5501/index.html#/");
+
       console.log("Usuario creado con exito");
       console.log(userCredentials);
     } catch (error) {}

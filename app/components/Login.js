@@ -4,7 +4,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 
 export function Login() {
-    console.log("ENTRA A LOGIN");
+  console.log("ENTRA A LOGIN");
   const $loginForm = document.getElementById("login-form");
   if ($loginForm) {
     return $loginForm.parentNode;
@@ -38,11 +38,15 @@ export function Login() {
     console.log(email, password, "desde el Login");
 
     const auth = getAuth();
-    signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
-      form.reset();
-      const user = userCredential.user;
-      console.log("Inicio de sesion exitoso");
-    });
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        form.reset();
+        const user = userCredential.user;
+        console.log("Inicio de sesion exitoso");
+      })
+      .then(() => {
+        location.assign("http://127.0.0.1:5501/index.html#/");
+      });
   });
 
   return $loginContainer;

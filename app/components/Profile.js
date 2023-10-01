@@ -9,7 +9,7 @@ export function Profile() {
   <div class="user-start-menu" id="logged-out-menu">
   <a class="login-link" href="#/login">
     <span>Iniciar sesión</span>
-    <i class="fas fa-sign-in-alt"></i>
+    <i class="fas fa-sign-in-alt login-image"></i>
   </a>
   <a class="signup-link" href="#/signup">
     <span>Registrarse</span>

@@ -3,7 +3,7 @@ export function Logo() {
   const $logo = document.createElement("div");
 
   $logo.classList.add("logo");
-  $logo.innerHTML = `<a href="#/">Bi!</a> `;
+  $logo.innerHTML = `<a href="#/">BuyIt!</a> `;
 
   return $logo;
 }
