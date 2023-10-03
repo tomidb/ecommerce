@@ -209,27 +209,21 @@ header {
 /* NAV BAR */
 .navbar {
   display: block;
-  width: 100%;
   color: white;
 }
 
 .navbar ul {
   display: flex;
-  width: 100%;
   margin: 0px;
   padding: 0px;
   list-style: none;
-  background-color: rgb(140, 37, 172);
 }
 
 nav ul li {
   display: inline-block;
   position: relative;
   border-right: 1px solid white;
-}
-
-nav ul li:hover {
-  background-color: rgba(141, 37, 172, 0.535);
+  background-color: rgb(140, 37, 172);
 }
 
 nav ul li a {
@@ -252,7 +246,7 @@ nav ul li:hover .children {
 
 nav ul li .children {
   display: none;
-  background-color: rgba(78, 31, 92);
+  z-index: 101;
   position: absolute;
   width: 150%;
 }
@@ -261,6 +255,11 @@ nav ul li .children li {
   display: block;
   overflow: hidden;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(195, 0, 255, 0.5);
+}
+
+nav ul li .children li:hover {
+  background-color: rgba(195, 0, 255);
 }
 
 nav ul li .children li a {
@@ -854,6 +853,34 @@ i[id*="icon"] {
   }
 
   .del-button {
+    width: 100%;
+  }
+
+  /* ESTILOS DE NAVBAR */
+
+  .navbar ul {
+    width: auto;
+    flex-direction: column;
+  }
+
+  nav ul li {
+    display: block;
+    border-bottom: 1px solid white;
+  }
+  nav ul li a {
+    display: block;
+  }
+
+  nav ul li:hover .children {
+    display: block;
+  }
+
+  nav ul li .children {
+    width: 100%;
+    position: relative;
+  }
+
+  nav ul li .children li {
     width: 100%;
   }
 }
