@@ -1,19 +1,23 @@
 import { Logo } from "./Logo.js";
 import { MenuToggle } from "./MenuToggle.js";
+import { Navbar } from "./Navbar.js";
 import { Profile } from "./Profile.js";
-import { SearchForm } from "./SearchForm.js";
 
 export function Header() {
   console.log("ENTRA A HEADER");
   const d = document,
-    $header = d.createElement("header");
+    $header = d.createElement("header"),
+    $mainNavBar = d.createElement("div");
 
   $header.classList.add("header");
+  $mainNavBar.classList.add("main-navbar");
+  $header.appendChild($mainNavBar);
 
-  $header.appendChild(MenuToggle());
-  $header.appendChild(Logo());
+  $mainNavBar.appendChild(MenuToggle());
+  $mainNavBar.appendChild(Logo());
   //$header.appendChild(SearchForm());
-  $header.appendChild(Profile());
+  $mainNavBar.appendChild(Profile());
+  $header.appendChild(Navbar());
 
   return $header;
 }

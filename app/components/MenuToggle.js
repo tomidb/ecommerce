@@ -8,5 +8,11 @@ export function MenuToggle() {
   <span class="menu-toggler-bar"></span>
   `;
 
+  $menuToggle.addEventListener("click", (e) => {
+    if (e.target.matches(".menu-toggle")) {
+      document.querySelector(".navbar").classList.toggle("display-toggle");
+    }
+  });
+
   return $menuToggle;
 }
