@@ -209,16 +209,23 @@ header {
 /* NAV BAR */
 .navbar {
   display: block;
+  margin: 0px;
+  width: 100%;
   color: white;
 }
 
 .navbar ul {
   display: flex;
+  background-color: rgb(140, 37, 172);
   margin: 0px;
   padding: 0px;
+  justify-content: center;
   list-style: none;
 }
 
+nav ul li:first-child {
+  border-left: 1px solid white;
+}
 nav ul li {
   display: inline-block;
   position: relative;
