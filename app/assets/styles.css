@@ -350,6 +350,9 @@ nav ul li .children li a:link {
   display: none;
 }
 
+.display-block {
+  display: block;
+}
 /* SLIDER ESTILOS GRALES */
 
 .big-container {
@@ -1011,4 +1014,8 @@ i[id*="icon"] {
   nav ul li .children li a {
     padding-left: 20px;
   }
+}
+
+.display-toggle {
+  display: none;
 }

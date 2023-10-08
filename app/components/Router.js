@@ -19,7 +19,7 @@ export async function Router() {
   if (!hash || hash === "#/") {
     // Remover la clase .grid-fluid
     $main.classList.add("grid-fluid");
-    $slider.classList.toggle("display-toogle");
+    $slider.classList.remove("display-toggle");
 
     /* d.getElementById("main").insertAdjacentElement(
       "afterbegin",
@@ -99,7 +99,6 @@ export async function Router() {
     // Remover la clase .grid-fluid
     $main.classList.remove("grid-fluid");
     $slider.classList.add("display-toggle");
-
     $main.appendChild(Cart());
   }
 }
