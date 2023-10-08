@@ -3,6 +3,7 @@ import { Main } from "../components/Main.js";
 import { Router } from "../components/Router.js";
 import { UserDb } from "./usersDb.js";
 import { CategoriesSlider } from "../components/CategoriesSlider.js";
+import { Slider } from "../components/Slider.js";
 
 export const Auth = {
   userDb: null,
@@ -17,7 +18,8 @@ export const Auth = {
     $root.innerHTML = null;
 
     $root.appendChild(Header());
-    $root.appendChild(CategoriesSlider());
+    // $root.appendChild(CategoriesSlider());
+    $root.appendChild(Slider());
     $root.appendChild(Main());
 
     const $loggedOutLinks = document.querySelector("#logged-out-menu");
