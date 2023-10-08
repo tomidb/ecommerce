@@ -486,8 +486,8 @@ nav ul li .children li a:link {
   mix-blend-mode: darken;
 
   justify-content: center;
-  height: 220px;
-  width: 220px;
+  height: 200px;
+  width: 200px;
 }
 
 /* PRODUCTS CARDS */
@@ -900,6 +900,41 @@ i[id*="icon"] {
   .price-container {
     width: 40%;
     justify-content: center;
+  }
+
+  .offer-product-img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .offer-title {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .offer-msj {
+    font-size: 11px;
+  }
+
+  .offer-btn {
+    font-size: 12px;
+    padding: 4px;
+    line-height: 0px;
+    padding-inline: 2px;
+  }
+
+  /* SLIDER STYLES*/
+
+  .offer-slide {
+    height: 150px;
+  }
+
+  .offer-data-container {
+    width: 175px;
+  }
+
+  .offer-img-container {
+    width: 100px;
   }
 }
 
