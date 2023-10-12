@@ -54,8 +54,6 @@ export function Cart() {
           .reduce((acc, { quantity, price }) => acc + quantity * price, 0)
           .toFixed(2);
 
-        // CUIDADO, HOMBRES TRABAJANDO EN ESTE PRECISO LUGAR
-
         const wspText = cart
           .reduce(
             (message, product) =>
@@ -118,6 +116,10 @@ export function Cart() {
     const product = cart.find((el) => el.id === id);
     if (e.target.matches(".decrement-button")) {
       product.quantity--;
+      if (product.quantity === 0) {
+        deleteProductFromCart(id);
+        return; // Salir de la función para evitar que se actualice el producto en la base de datos
+      }
     } else if (e.target.matches(".increment-button")) {
       product.quantity++;
     }

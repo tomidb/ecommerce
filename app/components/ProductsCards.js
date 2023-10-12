@@ -64,7 +64,7 @@ export function ProductsCards(props) {
   </div>
   <div class="data-container">
     <p class="product-name">
-      <a href="#">${title}</a>
+      <a href="#/product/${id}">${title}</a>
     </p>
     <p class="product-data">
       <span class="product-price">$ ${price.toFixed(2)}</span>

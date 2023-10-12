@@ -5,7 +5,7 @@ export function Slides(props) {
   <article class="offer-slide">
     <div class="offer-data-container">
       <span class="offer-title">Día de la madre</span>
-      <span class="offer-msj">¡Hasta 30% en joyería!</span>
+      <p class="offer-msj">¡Hasta 30% en joyería!</p>
       <button class="offer-btn">Ver ofertas</button>
     </div>
     <div class="offer-img-container">

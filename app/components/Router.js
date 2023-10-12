@@ -6,6 +6,7 @@ import { Favs } from "./Favs.js";
 import { MisCompras } from "./MisCompras.js";
 import { Cart } from "./Cart.js";
 import { Auth } from "../helpers/authCheck.js";
+import { Product } from "./Product.js";
 
 export async function Router() {
   console.log("ENTRA A ROUTER");
@@ -100,5 +101,10 @@ export async function Router() {
     $main.classList.remove("grid-fluid");
     $slider.classList.add("display-toggle");
     $main.appendChild(Cart());
+  } else if (hash.includes("#/product/")) {
+    $slider.classList.add("display-toggle");
+    $main.classList.add("grid-fluid");
+
+    $main.appendChild(Product());
   }
 }
