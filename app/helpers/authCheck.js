@@ -1,3 +1,4 @@
+import { Modal } from "../components/Modal.js";
 import { Header } from "../components/Header.js";
 import { Main } from "../components/Main.js";
 import { Router } from "../components/Router.js";
@@ -17,6 +18,7 @@ export const Auth = {
 
     $root.innerHTML = null;
 
+    $root.appendChild(Modal());
     $root.appendChild(Header());
     // $root.appendChild(CategoriesSlider());
     $root.appendChild(Slider());

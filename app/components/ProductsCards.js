@@ -17,33 +17,41 @@ export function ProductsCards(props) {
   } = props;
 
   const handleFavoriteClick = async () => {
-    const icon = document.getElementById(`icon-${id}`);
-    const favorites = await Auth.userDb.getFavorites();
+    if (Auth.userDb) {
+      const icon = document.getElementById(`icon-${id}`);
+      const favorites = await Auth.userDb.getFavorites();
 
-    if (favorites.includes(id.toString())) {
-      await Auth.userDb.delProductFromFav(id);
-      icon.classList.replace("fas", "far");
+      if (favorites.includes(id.toString())) {
+        await Auth.userDb.delProductFromFav(id);
+        icon.classList.replace("fas", "far");
+      } else {
+        await Auth.userDb.addProductToFav(id);
+        icon.classList.replace("far", "fas");
+      }
     } else {
-      await Auth.userDb.addProductToFav(id);
-      icon.classList.replace("far", "fas");
+      document.querySelector(".modal-section").classList.add("active");
     }
   };
 
   const handleCartClick = async () => {
-    // Agrega el producto al carrito de compras en la colección de Firestore del usuario
-    const icon = document.getElementById(`cart-${id}`);
-    const cart = await Auth.userDb.getCart();
-    // await Auth.userDb.addProductToCart(id);        << ESTA LINEA ERA TODO
+    if (Auth.userDb) {
+      // Agrega el producto al carrito de compras en la colección de Firestore del usuario
+      const icon = document.getElementById(`cart-${id}`);
+      const cart = await Auth.userDb.getCart();
+      // await Auth.userDb.addProductToCart(id);        << ESTA LINEA ERA TODO
 
-    if (cart.includes(id.toString())) {
-      await Auth.userDb.delProductFromCart(id);
-      icon.classList.replace("success-color", "neutral-color");
+      if (cart.includes(id.toString())) {
+        await Auth.userDb.delProductFromCart(id);
+        icon.classList.replace("success-color", "neutral-color");
+      } else {
+        await Auth.userDb.addProductToCart(id, title, price, image);
+        icon.classList.replace("neutral-color", "success-color");
+      }
+      // Actualiza el icono del carrito en el header para indicar que hay productos en el carrito
+      Auth.userDb.updateCartIcon();
     } else {
-      await Auth.userDb.addProductToCart(id, title, price, image);
-      icon.classList.replace("neutral-color", "success-color");
+      document.querySelector(".modal-section").classList.add("active");
     }
-    // Actualiza el icono del carrito en el header para indicar que hay productos en el carrito
-    Auth.userDb.updateCartIcon();
   };
 
   document.getElementById("main").addEventListener("click", (e) => {
