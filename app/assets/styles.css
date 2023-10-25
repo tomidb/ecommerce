@@ -1191,6 +1191,17 @@ i[id*="icon"] {
   }
 }
 @media (max-width: 470px) {
+  /* PRUEBA PRODCUT CONTAINER */
+
+  .product-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .add-cart-btn {
+    min-width: 180px;
+  }
+
   .cart-container {
     width: 95%;
   }
