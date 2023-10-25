@@ -31,7 +31,7 @@ export async function Router() {
       url: "https://fakestoreapi.com/products",
       cbSuccess: async (products) => {
         if (!Auth.userDb) {
-          let html = "";
+          let html = `<h2 class="home-title">Todos nuestros productos</h2>`;
           console.log(Auth.userDb);
           console.log("NO HAY USUARIOS CONECTADOS");
           await products.forEach(async (product) => {

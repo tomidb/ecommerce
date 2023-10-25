@@ -495,11 +495,18 @@ nav ul li .children li a:link {
 /* PRODUCTS CARDS */
 .grid-fluid {
   margin: 0 auto;
-  padding-top: 2rem;
+  padding-top: 3rem;
   max-width: 100%;
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
+}
+
+.home-title {
+  width: 100vw;
+  position: absolute;
+  top: 17rem;
+  padding-left: 4rem;
 }
 
 .image-container {
@@ -1191,7 +1198,13 @@ i[id*="icon"] {
   }
 }
 @media (max-width: 470px) {
-  /* PRUEBA PRODCUT CONTAINER */
+  /* ESTILOS DE HOME*/
+
+  .home-title {
+    padding: 0 1rem;
+  }
+
+  /* ESTILOS DE PRODUCTO*/
 
   .product-content {
     display: flex;
