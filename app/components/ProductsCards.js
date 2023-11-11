@@ -4,7 +4,7 @@ export function ProductsCards(props) {
   console.log("ENTRA A PRODUCT CARDS");
   const {
     id,
-    title,
+    name,
     image,
     thumbnail,
     price,
@@ -25,7 +25,7 @@ export function ProductsCards(props) {
         await Auth.userDb.delProductFromFav(id);
         icon.classList.replace("fas", "far");
       } else {
-        await Auth.userDb.addProductToFav(id);
+        await Auth.userDb.addProductToFav(id, name, price, image);
         icon.classList.replace("far", "fas");
       }
     } else {
@@ -44,7 +44,7 @@ export function ProductsCards(props) {
         await Auth.userDb.delProductFromCart(id);
         icon.classList.replace("success-color", "neutral-color");
       } else {
-        await Auth.userDb.addProductToCart(id, title, price, image);
+        await Auth.userDb.addProductToCart(id, name, price, image);
         icon.classList.replace("neutral-color", "success-color");
       }
       // Actualiza el icono del carrito en el header para indicar que hay productos en el carrito
@@ -68,14 +68,14 @@ export function ProductsCards(props) {
   return `
   <article class="product-card">
   <div class="image-container">
-    <img src="${image}" alt="${title}" class="product-card-img">
+    <img src="${image}" alt="${name}" class="product-card-img">
   </div>
   <div class="data-container">
     <p class="product-name">
-      <a href="#/product/${id}">${title}</a>
+      <a href="#/product/${id}">${name}</a>
     </p>
     <p class="product-data">
-      <span class="product-price">$ ${price.toFixed(2)}</span>
+      <span class="product-price">$ ${price}</span>
     </p> 
     <div class="button-panel" id="button-panel">
       <button id="fav-${id}" class="fav-${id}"><i  id="icon-${id}" class="${favIconClass} fa-heart" style="color:red;"></i></button>

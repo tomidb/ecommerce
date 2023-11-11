@@ -30,12 +30,6 @@ export function Profile() {
       <li>
         <a href="#/favoritos">Favoritos</a>
       </li>
-      <li>
-        <a href="#/mis-compras">Mis compras</a>
-      </li>
-      <li>
-        <a>Mis búsquedas</a>
-      </li>
       <hr>
       <li>
         <a id="logout" href="#/">Cerrar sesión</a>

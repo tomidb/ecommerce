@@ -10,7 +10,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 export function UserDb(props) {
-    console.log("ENTRA A USERSDB");
+  console.log("ENTRA A USERSDB");
   let { uid, email } = props;
 
   this.id = uid;
@@ -28,7 +28,7 @@ export function UserDb(props) {
     });
   };
   // FUNCION PARA AÑADIR PRODUCTO A FAVORITOS
-  this.addProductToFav = async function (productId) {
+  this.addProductToFav = async function (productId, name, price, image) {
     const userFavCollectionRef = collection(db, "users", uid, "favorites");
 
     try {
@@ -42,7 +42,11 @@ export function UserDb(props) {
 
       await setDoc(doc(userFavCollectionRef, productId.toString()), {
         timestamp: serverTimestamp(),
+        name: name,
+        price: price,
+        image: image,
       });
+
       console.log("Producto agregado a la lista de favoritos");
     } catch (error) {
       console.error(
@@ -88,9 +92,32 @@ export function UserDb(props) {
     return favorites;
   };
 
+  // FUNCION PARA OBTENER FAVORITOS CON DETALLE
+
+  this.getFavsWithDetails = async function () {
+    const userFavsCollectionRef = collection(db, "users", uid, "favorites");
+    const userFavsDocs = await getDocs(userFavsCollectionRef);
+    const favorites = [];
+
+    userFavsDocs.forEach((docSnap) => {
+      const productId = docSnap.id;
+      const productData = docSnap.data();
+
+      const product = {
+        id: productId,
+        name: productData.name,
+        price: productData.price,
+        image: productData.image,
+      };
+      favorites.push(product);
+    });
+
+    return favorites;
+  };
+
   // FUNCION PARA AÑADIR PRODUCTOS AL CARRITO DE COMPRA
 
-  this.addProductToCart = async function (productId, title, price, image) {
+  this.addProductToCart = async function (productId, name, price, image) {
     const userCartCollectionRef = collection(db, "users", uid, "cart");
 
     try {
@@ -105,7 +132,7 @@ export function UserDb(props) {
       await setDoc(doc(userCartCollectionRef, productId.toString()), {
         quantity: 1,
         timestamp: serverTimestamp(),
-        title: title,
+        name: name,
         price: price,
         image: image,
       });
@@ -167,7 +194,6 @@ export function UserDb(props) {
       const productId = docSnap.id;
       const productData = docSnap.data();
 
-      // Crea un objeto con las propiedades necesarias y agrégalo al array 'cart'
       const product = {
         id: productId,
         title: productData.title,

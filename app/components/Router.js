@@ -7,6 +7,11 @@ import { MisCompras } from "./MisCompras.js";
 import { Cart } from "./Cart.js";
 import { Auth } from "../helpers/authCheck.js";
 import { Product } from "./Product.js";
+import { AdmPanel } from "./AdmPanel.js";
+import { fetch_firestore } from "../helpers/fetch_firestore.js";
+import { collection } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+import { db } from "../helpers/firebase.js";
+import { fetchCategories } from "./Categories.js";
 
 export async function Router() {
   console.log("ENTRA A ROUTER");
@@ -18,17 +23,10 @@ export async function Router() {
   let { hash } = location;
 
   if (!hash || hash === "#/") {
-    // Remover la clase .grid-fluid
     $main.classList.add("grid-fluid");
     $slider.classList.remove("display-toggle");
-
-    /* d.getElementById("main").insertAdjacentElement(
-      "afterbegin",
-      CategoriesSlider()
-    );*/
-
-    await fetch_request({
-      url: "https://fakestoreapi.com/products",
+    fetch_firestore({
+      ref: collection(db, "products"),
       cbSuccess: async (products) => {
         if (!Auth.userDb) {
           let html = `<h2 class="home-title">Todos nuestros productos</h2>`;
@@ -45,7 +43,7 @@ export async function Router() {
             $main.innerHTML = html;
           });
         } else if (Auth.userDb) {
-          let html = "";
+          let html = `<h2 class="home-title">Todos nuestros productos</h2>`;
           console.log(Auth.userDb);
           console.log("HAY USUARIOS CONECTADOS");
           await products.forEach(async (product) => {
@@ -86,9 +84,8 @@ export async function Router() {
     $main.appendChild(Login());
   } else if (hash === "#/favoritos") {
     // Añadir la clase .grid-fluid
-    $main.classList.add("grid-fluid");
+    $main.classList.remove("grid-fluid");
     $slider.classList.add("display-toggle");
-
     $main.appendChild(Favs());
   } else if (hash === "#/mis-compras") {
     // Añadir la clase .grid-fluid
@@ -106,5 +103,14 @@ export async function Router() {
     $main.classList.add("grid-fluid");
 
     $main.appendChild(Product());
+  } else if (hash.includes("#/category/")) {
+    $slider.classList.add("display-toggle");
+    $main.classList.remove("grid-fluid");
+    $main.appendChild(fetchCategories());
+  } else if (hash === "#/informacion") {
+  } else if (hash === "#/buyitadminpanel") {
+    $main.classList.remove("grid-fluid");
+    $slider.classList.add("display-toggle");
+    $main.appendChild(AdmPanel());
   }
 }

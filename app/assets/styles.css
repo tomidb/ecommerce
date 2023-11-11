@@ -13,6 +13,7 @@ html {
 *:after,
 *:before {
   box-sizing: inherit;
+  transition: all 0.5s ease-out;
 }
 
 body {
@@ -227,6 +228,13 @@ nav ul li .children li a:link {
   color: white;
 }
 
+.adm-panel-link-a {
+  color: rgb(255, 232, 27);
+}
+
+.adm-panel-link-a:visited {
+  color: rgb(255, 232, 27);
+}
 /* USER MENU */
 
 .profile-container {
@@ -449,7 +457,7 @@ nav ul li .children li a:link {
 .offer-msj {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
   color: #4b4b4b;
 }
 
@@ -476,7 +484,7 @@ nav ul li .children li a:link {
   width: 150px;
   margin: 0 auto;
   padding: 0 1rem 0.5rem 1rem;
-  background-color: yellow;
+  background-color: white;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   overflow: hidden;
@@ -490,6 +498,15 @@ nav ul li .children li a:link {
   justify-content: center;
   height: 155px;
   width: 150px;
+}
+/* CATEGORIES*/
+.categories-container {
+  padding-top: 6rem;
+}
+
+/*FAVS*/
+.favs-container {
+  padding-top: 6rem;
 }
 
 /* PRODUCTS CARDS */
@@ -1067,6 +1084,21 @@ i[id*="icon"] {
   border-radius: 6px;
   cursor: pointer;
   border: 0;
+}
+
+/* ADMIN PANEL*/
+.adm-panel-container {
+  padding-top: 7rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.adm-panel-container textarea {
+  min-width: 300px;
+  resize: none;
 }
 /* MEDIA QUERIES */
 

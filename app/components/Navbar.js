@@ -15,14 +15,14 @@ export function Navbar() {
 				<li class="submenu">
 					<a href="#" class="categories-link">Categorías</a>
 					<ul class="children">
-						<li><a href="#">Electronics</a></li>
-						<li><a href="#">Jewelery </a></li>
-						<li><a href="#">Men's clothing</a></li>
-            <li><a href="#">Women's clothing</a></li>
+						<li><a href="#/category/Mouse">Mouse</a></li>
+						<li><a href="#/category/Teclado">Teclado </a></li>
+						<li><a href="#/category/Notebook">Notebook</a></li>
+            <li><a href="#/category/Monitor">Monitor</a></li>
 					</ul>
 				</li>
-				<li><a href="#">Ubicación</a></li>
-				<li><a href="#">Información</a></li>
+				<li><a href="#/informacion">Información</a></li>
+        <li class="adm-panel-link"><a href="#/buyitadminpanel" class="adm-panel-link-a">Admin panel</a></li>
 			</ul>
   `;
 

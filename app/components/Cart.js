@@ -24,7 +24,7 @@ export function Cart() {
     console.log(cart);
     cart.forEach((el) => {
       let prodPrice = el.quantity * el.price,
-        finalProdPrice = prodPrice.toFixed(2);
+        finalProdPrice = prodPrice.toFixed(3);
       $template.querySelector("img").setAttribute("src", el.image);
       $template.querySelector(".product-title").textContent = el.title;
       $template.querySelector(".quantity").textContent = el.quantity;
@@ -52,7 +52,7 @@ export function Cart() {
       } else {
         const nPrice = Object.values(cart)
           .reduce((acc, { quantity, price }) => acc + quantity * price, 0)
-          .toFixed(2);
+          .toFixed(3);
 
         const wspText = cart
           .reduce(
