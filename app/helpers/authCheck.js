@@ -40,7 +40,7 @@ export const Auth = {
 
       Auth.userDb.updateCartIcon();
 
-      if (Auth.userDb.email === "buyit@admin.com") {
+      if (Auth.userDb.email === "ecommerce@admin.com") {
         console.log(Auth.userDb.email);
         console.log(this.userDb.email);
         $admPanelLink.classList.remove("display-none");
