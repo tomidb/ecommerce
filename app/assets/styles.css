@@ -232,6 +232,10 @@ nav ul li .children li a:link {
   color: rgb(255, 232, 27);
 }
 
+.adm-panel-link-a:link {
+  color: rgb(255, 232, 27);
+}
+
 .adm-panel-link-a:visited {
   color: rgb(255, 232, 27);
 }
