@@ -58,7 +58,7 @@ export function Cart() {
           .reduce(
             (message, product) =>
               message.concat(
-                `\n*${product.title}*\n- Cantidad: ${
+                `\n*${product.name}*\n- Cantidad: ${
                   product.quantity
                 }\n- Precio: $${product.quantity * product.price}\n`
               ),

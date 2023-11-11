@@ -196,7 +196,7 @@ export function UserDb(props) {
 
       const product = {
         id: productId,
-        title: productData.title,
+        name: productData.name,
         price: productData.price,
         quantity: productData.quantity,
         image: productData.image,
