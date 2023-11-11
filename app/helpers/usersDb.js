@@ -131,10 +131,10 @@ export function UserDb(props) {
 
       await setDoc(doc(userCartCollectionRef, productId.toString()), {
         quantity: 1,
-        timestamp: serverTimestamp(),
         name: name,
         price: price,
         image: image,
+        timestamp: serverTimestamp(),
       });
 
       console.log("Producto agregado al carrito de compras");
