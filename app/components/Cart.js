@@ -26,7 +26,7 @@ export function Cart() {
       let prodPrice = el.quantity * el.price,
         finalProdPrice = prodPrice.toFixed(3);
       $template.querySelector("img").setAttribute("src", el.image);
-      $template.querySelector(".product-title").textContent = el.title;
+      $template.querySelector(".product-title").textContent = el.name;
       $template.querySelector(".quantity").textContent = el.quantity;
       $template.querySelector(".price").textContent = `$${finalProdPrice}`;
       $template.querySelector(".decrement-button").dataset.id = el.id;
