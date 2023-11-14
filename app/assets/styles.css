@@ -685,10 +685,10 @@ i[id*="icon"] {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: rgb(140, 37, 172);
+  color: #3483fa;
   margin-bottom: 40px;
   border: none;
-  border-bottom: 1px solid rgb(140, 37, 172);
+  border-bottom: 1px solid #3483fa;
   outline: none;
   background: transparent;
 }
@@ -699,7 +699,7 @@ i[id*="icon"] {
   left: 0;
   padding: 10px 0;
   font-size: 16px;
-  color: rgb(140, 37, 172);
+  color: #3483fa;
   pointer-events: none;
   transition: 0.5s;
 }
@@ -708,7 +708,7 @@ i[id*="icon"] {
 .signup-container .input-box input:valid ~ label {
   top: -18px;
   left: 0;
-  color: rgb(164, 111, 180);
+  color: #b3d2ff78;
   font-size: 12px;
 }
 
@@ -752,10 +752,10 @@ i[id*="icon"] {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: rgb(140, 37, 172);
+  color: #3483fa;
   margin-bottom: 40px;
   border: none;
-  border-bottom: 1px solid rgb(140, 37, 172);
+  border-bottom: 1px solid #3483fa;
   outline: none;
   background: transparent;
 }
@@ -766,7 +766,7 @@ i[id*="icon"] {
   left: 0;
   padding: 10px 0;
   font-size: 16px;
-  color: rgb(140, 37, 172);
+  color: #3483fa;
   pointer-events: none;
   transition: 0.5s;
 }
@@ -775,7 +775,7 @@ i[id*="icon"] {
 .login-container .input-box input:valid ~ label {
   top: -18px;
   left: 0;
-  color: rgb(164, 111, 180);
+  color: #b3d2ff78;
   font-size: 12px;
 }
 /*
@@ -1155,7 +1155,7 @@ i[id*="icon"] {
 .adm-panel-btn {
   text-align: center;
   line-height: 48px;
-  width: 20vw;
+  width: 200px;
   margin: 0 auto;
   font-family: "Fuggles", cursive;
   font-family: "Poppins", sans-serif;
