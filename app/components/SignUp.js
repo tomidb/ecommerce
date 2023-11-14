@@ -22,7 +22,7 @@ export function SignUp() {
       <label>Contraseña</label>
     </div>
     <div class="submit-box">
-      <input type="submit" name="" value="Registrarse">
+      <input class="adm-panel-btn" type="submit" name="" value="Registrarse">
     </div>
   </form>
   `;
@@ -42,8 +42,8 @@ export function SignUp() {
         password
       );
       form.reset();
-      //location.assign("http://127.0.0.1:5501/index.html#/");
-      location.assign("https://buyit-ecommerce.netlify.app/#/");
+      location.assign("http://127.0.0.1:5501/index.html#/");
+      //location.assign("https://buyit-ecommerce.netlify.app/#/");
 
       console.log("Usuario creado con exito");
       console.log(userCredentials);

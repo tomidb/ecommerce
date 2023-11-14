@@ -12,6 +12,7 @@ import { fetch_firestore } from "../helpers/fetch_firestore.js";
 import { collection } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 import { db } from "../helpers/firebase.js";
 import { fetchCategories } from "./Categories.js";
+import { Informacion } from "./Informacion.js";
 
 export async function Router() {
   console.log("ENTRA A ROUTER");
@@ -108,6 +109,9 @@ export async function Router() {
     $main.classList.remove("grid-fluid");
     $main.appendChild(fetchCategories());
   } else if (hash === "#/informacion") {
+    $main.classList.remove("grid-fluid");
+    $slider.classList.add("display-toggle");
+    $main.appendChild(Informacion());
   } else if (hash === "#/buyitadminpanel") {
     $main.classList.remove("grid-fluid");
     $slider.classList.add("display-toggle");

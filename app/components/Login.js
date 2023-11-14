@@ -14,7 +14,7 @@ export function Login() {
   $loginContainer.classList.add("login-container");
 
   $loginContainer.innerHTML = `
-    <form id="login-form">
+    <form class="login-form" id="login-form">
     <div class="input-box">
       <input type="text"  id="login-email" name="" required="">
       <label>Usuario</label>
@@ -24,7 +24,7 @@ export function Login() {
       <label>Contraseña</label>
     </div>
     <div class="submit-box">
-      <input type="submit" name="" value="Iniciar Sesión">
+      <input class="adm-panel-btn" type="submit" name="" value="Iniciar Sesión">
     </div>
   </form>
   `;
@@ -45,8 +45,8 @@ export function Login() {
         console.log("Inicio de sesion exitoso");
       })
       .then(() => {
-        // location.assign("http://127.0.0.1:5501/index.html#/");
-        location.assign("https://buyit-ecommerce.netlify.app/#/");
+        location.assign("http://127.0.0.1:5501/index.html#/");
+        //location.assign("https://buyit-ecommerce.netlify.app/#/");
       });
   });
 

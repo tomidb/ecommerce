@@ -21,27 +21,28 @@ export function AdmPanel() {
   $addProd.classList.add("adm-panel-container");
 
   $addProd.innerHTML = `
+  <h2>Añadir producto</h2>
   <label>Product Name</label>
-  <input type="text" id="add-prod-name">
+  <input class="add-prod-input" type="text" id="add-prod-name">
     <label>Price</label>
-  <input type="text" id="add-prod-price">
+  <input class="add-prod-input" type="text" id="add-prod-price">
     <label>Category</label>
-  <select id="add-prod-category">
+  <select class="add-prod-input" id="add-prod-category">
     <option value="Mouse">Mouse</option>
     <option value="Teclado">Teclado</option>
     <option value="Monitor">Monitor</option>
     <option value="Notebook">Notebook</option>
   </select>
   <label>Product Description</label>
-  <textarea id="add-prod-description"></textarea>
+  <textarea class="add-prod-input" id="add-prod-description"></textarea>
 
 <label>Image Name</label>
-<input type="text" id="namebox"> 
+<input class="add-prod-input" type="text" id="namebox"> 
 <label id="extlab"> </label>
 <img id="myimg">  
 <label id="upprogress"></label>
-  <button id="selbtn" type="file">Select Image</button>
-  <button id="add-new-product">Add Product</button>  
+  <button class="adm-panel-btn" id="selbtn" type="file">Select Image</button>
+  <button class="adm-panel-btn" id="add-new-product">Add Product</button>  
 
   `;
 

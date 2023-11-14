@@ -33,7 +33,9 @@ export function fetchCategories() {
         });
       });
       if (!Auth.userDb) {
-        let html = ``;
+        let html = `
+       <h2 class="categories-title">${category}</h2> 
+        `;
         console.log(Auth.userDb);
         console.log("NO HAY USUARIOS CONECTADOS");
         await products.forEach(async (product) => {
@@ -47,7 +49,9 @@ export function fetchCategories() {
           $CategoriesCardContainer.innerHTML = html;
         });
       } else if (Auth.userDb) {
-        let html = ``;
+        let html = `
+       <h2 class="categories-title">${category}</h2> 
+        `;
         console.log(Auth.userDb);
         console.log("HAY USUARIOS CONECTADOS");
         await products.forEach(async (product) => {
