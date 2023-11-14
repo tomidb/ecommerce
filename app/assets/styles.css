@@ -1172,7 +1172,7 @@ i[id*="icon"] {
 }
 
 /* INFORMACION */
-.info-container {
+.info-view-container {
   display: flex;
   width: 100%;
   min-height: 100vh;

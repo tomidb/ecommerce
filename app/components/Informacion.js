@@ -1,6 +1,6 @@
 export function Informacion() {
   const $InfoContainer = document.createElement("div");
-  $InfoContainer.classList.add("info-container");
+  $InfoContainer.classList.add("info-view-container");
   $InfoContainer.innerHTML = `
   <h2> Información sobre nosotros </h2>
 
