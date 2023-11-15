@@ -21,8 +21,14 @@ export function Navbar() {
             <li><a href="#/category/Monitor">Monitor</a></li>
 					</ul>
 				</li>
+        <li class="navbar-favs-link">
+        <a href="#/favoritos">Favoritos</a>
+      </li>
 				<li><a href="#/informacion">Información</a></li>
         <li class="adm-panel-link"><a href="#/buyitadminpanel" class="adm-panel-link-a">Admin panel</a></li>
+        <li class="navbar-logout-link">
+        <a id="logout" href="#/">Cerrar sesión</a>
+      </li>
 			</ul>
   `;
 

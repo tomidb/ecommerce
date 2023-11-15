@@ -369,47 +369,8 @@ nav ul li .children li a:link {
   align-self: center;
 }
 
-.profile-menu {
-  display: none;
-  position: absolute;
-  top: 5rem;
-  right: 0px;
-  width: 160px;
-  margin: 0px;
-  padding: 0px;
-  background-color: #3483fa;
-  cursor: pointer;
-  list-style: none;
-}
-
 .profile-menu-container {
   height: 100%;
-}
-
-.profile-menu-container:hover .profile-menu {
-  display: block;
-}
-
-.profile-menu > li {
-  margin: 0;
-  background-color: #3483fa;
-  color: white;
-  padding: 8px;
-  line-height: 25px;
-  font-size: 13px;
-  text-decoration: none;
-  transition: all 100ms ease-in;
-}
-
-.profile-menu li a:link {
-  color: white;
-}
-
-.profile-menu li a:visited {
-  color: white;
-}
-.profile-menu > li:hover {
-  font-size: 20px;
 }
 
 .display-toggle {
@@ -683,10 +644,6 @@ button i {
   width: 100%;
   padding: 12px 0;
   margin: 0;
-}
-
-i[id*="icon"] {
-  border-right: 1px solid rgba(51, 51, 51, 0.3);
 }
 
 /* REGISTRARSE */
@@ -1236,7 +1193,39 @@ i[id*="icon"] {
 }
 
 /* MEDIA QUERIES */
+@media (max-width: 872px) {
+  /* ESTILOS DEL NAVBAR */
+  .navbar ul {
+    width: auto;
+    flex-direction: column;
+  }
 
+  nav ul li {
+    display: block;
+    border-top: 1px solid white;
+    padding: 0;
+  }
+
+  nav ul li a,
+  .categories-link {
+    display: block;
+    padding: 10px;
+  }
+
+  nav ul li .children {
+    width: 100%;
+    position: relative;
+  }
+
+  nav ul li .children li {
+    width: 100%;
+    background-color: #5296fc;
+  }
+
+  nav ul li .children li a {
+    padding-left: 30px;
+  }
+}
 @media (max-width: 680px) {
   .add-cart-btn {
     font-size: 12px;
@@ -1423,38 +1412,11 @@ i[id*="icon"] {
 
   /* ESTILOS DE NAVBAR */
 
-  .navbar ul {
-    width: auto;
-    flex-direction: column;
-  }
-
-  nav ul li {
-    display: block;
-    border-top: 1px solid white;
-    padding: 0;
-  }
-  nav ul li a,
-  .categories-link {
-    display: block;
-    padding: 10px;
-  }
   /*
   nav ul li:hover .children {
     display: block;
   }
 */
-  nav ul li .children {
-    width: 100%;
-    position: relative;
-  }
-
-  nav ul li .children li {
-    width: 100%;
-  }
-
-  nav ul li .children li a {
-    padding-left: 20px;
-  }
 }
 
 .display-toggle {

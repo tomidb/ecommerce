@@ -37,6 +37,12 @@ export const Auth = {
 
       $loggedOutLinks.classList.add("display-toggle");
       $loggedInLinks.classList.remove("display-toggle");
+      document
+        .querySelector(".navbar-favs-link")
+        .classList.remove("display-none");
+      document
+        .querySelector(".navbar-logout-link")
+        .classList.remove("display-none");
 
       Auth.userDb.updateCartIcon();
 
@@ -54,6 +60,10 @@ export const Auth = {
       $loggedOutLinks.classList.remove("display-toggle");
       $loggedInLinks.classList.add("display-toggle");
       $admPanelLink.classList.add("display-none");
+      document.querySelector(".navbar-favs-link").classList.add("display-none");
+      document
+        .querySelector(".navbar-logout-link")
+        .classList.add("display-none");
     }
 
     Router();

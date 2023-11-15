@@ -22,18 +22,6 @@ export function Profile() {
   </a>  
   <div class="profile-menu-container">
     <i id="profile-image" class="fas fa-user-circle"></i>
-    <ul class="profile-menu">
-      <li>
-        <span>Mi perfil</span>
-      </li>
-      <hr>
-      <li>
-        <a href="#/favoritos">Favoritos</a>
-      </li>
-      <hr>
-      <li>
-        <a id="logout" href="#/">Cerrar sesión</a>
-      </li>
   </div>
 </div>
   `;
