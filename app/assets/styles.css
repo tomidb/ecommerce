@@ -1433,15 +1433,16 @@ i[id*="icon"] {
     border-top: 1px solid white;
     padding: 0;
   }
-  nav ul li a {
+  nav ul li a,
+  .categories-link {
     display: block;
     padding: 10px;
   }
-
+  /*
   nav ul li:hover .children {
     display: block;
   }
-
+*/
   nav ul li .children {
     width: 100%;
     position: relative;
