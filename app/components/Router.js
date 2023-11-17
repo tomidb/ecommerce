@@ -13,6 +13,7 @@ import { collection } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-f
 import { db } from "../helpers/firebase.js";
 import { fetchCategories } from "./Categories.js";
 import { Informacion } from "./Informacion.js";
+import { ToastModule } from "./ToastModule.js";
 
 export async function Router() {
   console.log("ENTRA A ROUTER");
@@ -102,7 +103,6 @@ export async function Router() {
   } else if (hash.includes("#/product/")) {
     $slider.classList.add("display-toggle");
     $main.classList.add("grid-fluid");
-
     $main.appendChild(Product());
   } else if (hash.includes("#/category/")) {
     $slider.classList.add("display-toggle");

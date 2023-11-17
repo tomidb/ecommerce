@@ -48,12 +48,16 @@ export function Product() {
 
         d.getElementById("main").addEventListener("click", (e) => {
           if (e.target.matches(`#add-cart-btn-${productId}`)) {
-            Auth.userDb.addProductToCart(
-              productId,
-              productData.name,
-              productData.price,
-              productData.image
-            );
+            if (Auth.userDb) {
+              Auth.userDb.addProductToCart(
+                productId,
+                productData.name,
+                productData.price,
+                productData.image
+              );
+            } else {
+              document.querySelector(".modal-section").classList.add("active");
+            }
           }
         });
       } else {

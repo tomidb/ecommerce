@@ -8,6 +8,7 @@ import {
   collection,
   serverTimestamp,
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+import { Toast } from "../components/Toast.js";
 
 export function UserDb(props) {
   console.log("ENTRA A USERSDB");
@@ -139,6 +140,7 @@ export function UserDb(props) {
 
       console.log("Producto agregado al carrito de compras");
       this.updateCartIcon();
+      Toast();
     } catch (error) {
       console.error(
         `Error al agregar el producto ${productId} al carrito de compras`,

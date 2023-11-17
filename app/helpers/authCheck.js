@@ -5,6 +5,7 @@ import { Router } from "../components/Router.js";
 import { UserDb } from "./usersDb.js";
 import { CategoriesSlider } from "../components/CategoriesSlider.js";
 import { Slider } from "../components/Slider.js";
+import { ToastModule } from "../components/ToastModule.js";
 
 export const Auth = {
   userDb: null,
@@ -22,6 +23,7 @@ export const Auth = {
     $root.appendChild(Header());
     // $root.appendChild(CategoriesSlider());
     $root.appendChild(Slider());
+    $root.appendChild(ToastModule());
     $root.appendChild(Main());
 
     const $loggedOutLinks = document.querySelector("#logged-out-menu");
