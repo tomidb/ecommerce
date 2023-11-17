@@ -22,6 +22,10 @@ export function Login() {
     <div class="input-box">
       <input type="password" id="login-password" name="" required="">
       <label>Contraseña</label>
+    </div>  
+    <div class="error-msg display-toggle">
+      <span>Error:</span>
+      <p>Introduce un usuario y una contraseña correctos.</p>
     </div>
     <div class="submit-box">
       <input class="adm-panel-btn" type="submit" name="" value="Iniciar Sesión">
@@ -47,6 +51,14 @@ export function Login() {
       .then(() => {
         //   location.assign("http://127.0.0.1:5501/index.html#/");
         location.assign("https://buyit-ecommerce.netlify.app/#/");
+      })
+      .catch((err) => {
+        document.querySelector(".error-msg").classList.toggle("display-toggle");
+        setTimeout(() => {
+          document
+            .querySelector(".error-msg")
+            .classList.toggle("display-toggle");
+        }, 5000);
       });
   });
 

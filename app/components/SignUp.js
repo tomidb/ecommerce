@@ -21,6 +21,10 @@ export function SignUp() {
       <input type="password" id="signup-password" name="" required="">
       <label>Contraseña</label>
     </div>
+    <div class="error-msg display-toggle">
+      <span>Error:</span>
+      <p>Recuerda utilizar un mail valido y una contraseña de al menos 6 caracteres.</p>
+    </div>
     <div class="submit-box">
       <input class="adm-panel-btn" type="submit" name="" value="Registrarse">
     </div>
@@ -42,12 +46,17 @@ export function SignUp() {
         password
       );
       form.reset();
-      // location.assign("http://127.0.0.1:5501/index.html#/");
+      //location.assign("http://127.0.0.1:5501/index.html#/");
       location.assign("https://buyit-ecommerce.netlify.app/#/");
 
       console.log("Usuario creado con exito");
       console.log(userCredentials);
-    } catch (error) {}
+    } catch (error) {
+      document.querySelector(".error-msg").classList.toggle("display-toggle");
+      setTimeout(() => {
+        document.querySelector(".error-msg").classList.toggle("display-toggle");
+      }, 5000);
+    }
   });
   return $signUpContainer;
 }

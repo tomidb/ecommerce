@@ -763,6 +763,21 @@ button i {
   color: #b3d2ff78;
   font-size: 12px;
 }
+
+.error-msg {
+  background-color: rgb(255, 161, 161);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 35px;
+}
+.error-msg span {
+  font-weight: bold;
+  width: 100%;
+}
+.error-msg p {
+  margin: 0;
+}
+
 /*
 .submit-box {
   text-align: center;
@@ -1066,7 +1081,7 @@ button i {
   border-left: 8px solid #47d764;
   border-radius: 7px;
   display: flex;
-  transform: translateY(-120px);
+  transform: translateY(-140px);
   transition: 1s;
 }
 .container-1 {
